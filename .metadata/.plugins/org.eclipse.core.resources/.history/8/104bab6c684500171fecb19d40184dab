@@ -1,0 +1,44 @@
+package Android;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.Test;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class EmulatorTest {
+	@Test
+	public void caps() throws MalformedURLException, Exception {
+
+		DesiredCapabilities capabilities = DesiredCapabilities.android();
+
+		// mandatory capabilities
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, BrowserType.CHROME);
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "S8plus7.0");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
+		capabilities.setCapability(MobileCapabilityType.VERSION, "7.0");
+		capabilities.setCapability("platformVersion", "7.0");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+		// capabilities.setCapability("udid", "0715f7fd2eaf0b04");
+		capabilities.setCapability("chromedriverExecutable", "/Users/rrazumov/Downloads/chromedriver 2");
+		capabilities.setCapability("app-package", "com.google.android.apps.chrome");
+		capabilities.setCapability("app-activity", "com.android.chrome/.Main");
+
+		// other caps
+		// capabilities.setCapability(“app”, app.getAbsolutePath());
+		capabilities.setCapability("autoLaunch", true);
+		URL url = new URL("http://127.0.0.1:4723/wd/hub");
+		WebDriver driver = new AndroidDriver(url, capabilities);
+		driver.get("https://github.com/appium/appium/issues/885");
+		System.out.println("PAsssssssssssssssSSS");
+
+		Thread.sleep(30000);
+
+	}
+}

@@ -1,0 +1,86 @@
+package Android;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.Select;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import junit.framework.Assert;
+
+public class EmulatorTest {
+	@Test
+	public void caps() throws MalformedURLException, Exception {
+
+		DesiredCapabilities capabilities = DesiredCapabilities.android();
+
+		// mandatory capabilities
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, BrowserType.CHROME);
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "api25");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
+		capabilities.setCapability(MobileCapabilityType.VERSION, "7.1.1");
+		capabilities.setCapability("platformVersion", "7.1.1");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+		// capabilities.setCapability("udid", "0715f7fd2eaf0b04");
+		capabilities.setCapability("chromedriverExecutable", "/Users/rrazumov/Downloads/chromedriver 2");
+		capabilities.setCapability("app-package", "com.google.android.apps.chrome");
+		capabilities.setCapability("app-activity", "com.android.chrome/.Main");
+
+		// other caps
+		//capabilities.setCapability(“app”, app.getAbsolutePath());
+		capabilities.setCapability("autoLaunch", true);
+		URL url = new URL("http://127.0.0.1:4723/wd/hub");
+		WebDriver driver = new AndroidDriver(url, capabilities);
+		//driver.get("https://github.com/appium/appium/issues/885");
+		System.out.println("PAsssssssssssssssSSS");
+
+		Thread.sleep(30000);
+		String firstName = "John";
+		String lastName = "Smith";
+		String email = "tobe@notobe.com";
+
+		driver.get("http://news.samsung.com/us/");
+		driver.findElement(By.xpath("/html/body/footer/div[1]/div/div[1]/div/ul/li[4]/a")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[1]/input")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[1]/input")).sendKeys(email);
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[2]/div[1]/input")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[2]/div[1]/input")).sendKeys(firstName);
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[2]/div[1]/input")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[2]/div[2]/input")).sendKeys(lastName);
+		driver.findElement(By.id("profession")).click();
+
+		new Select(driver.findElement(By.id("profession"))).selectByVisibleText("Blogger");
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[5]/label/input")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[6]/label/input")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div/form/div[7]/div/input")).click();
+
+		Thread.sleep(3000);
+
+		 String thankyouUrl = ("https://news.samsung.com/us/newsletter/?nm=confirmation&nk=28-f936b10075");
+
+		 boolean Pass = driver.getPageSource().contains("Thank you! An email with a confirmation link was sent to you. Please click the link to start your subscription");
+		    if (Pass == true)
+		    {
+		    System.out.print("Form submitted successfully " + ( "Url: ")  + driver.getCurrentUrl());
+		    Assert.assertTrue(Pass);
+		    }
+		    else
+		    {
+		    System.out.print("Fail");
+		    Assert.assertFalse(!Pass);
+
+		   }
+
+
+		}
+
+		
+	}
+

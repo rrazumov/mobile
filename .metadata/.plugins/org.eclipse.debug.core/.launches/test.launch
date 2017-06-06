@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/maventest/src/main/java/newtest/test.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="ANDROID_HOME" value="${build_files:/users/rrazumov/Library/Android/sdk}"/>
+<mapEntry key="APP_ICON_513" value="../Resources/Eclipse.icns"/>
+<mapEntry key="Apple_PubSub_Socket_Render" value="/private/tmp/com.apple.launchd.roGQQIcQqS/Render"/>
+<mapEntry key="COMMAND_MODE" value="unix2003"/>
+<mapEntry key="HOME" value="/Users/rrazumov"/>
+<mapEntry key="JAVA_STARTED_ON_FIRST_THREAD_513" value="1"/>
+<mapEntry key="LOGNAME" value="rrazumov"/>
+<mapEntry key="PATH" value="/usr/bin:/bin:/usr/sbin:/sbin"/>
+<mapEntry key="SECURITYSESSIONID" value="186a7"/>
+<mapEntry key="SHELL" value="/bin/bash"/>
+<mapEntry key="SSH_AUTH_SOCK" value="/private/tmp/com.apple.launchd.FyNkSfJPNk/Listeners"/>
+<mapEntry key="TMPDIR" value="/var/folders/h7/02n09km563n0bsj0p_z949lw0000gp/T/"/>
+<mapEntry key="USER" value="rrazumov"/>
+<mapEntry key="XPC_FLAGS" value="0x0"/>
+<mapEntry key="XPC_SERVICE_NAME" value="com.apple.xpc.launchd.oneshot.0x10000004.eclipse"/>
+<mapEntry key="__CF_USER_TEXT_ENCODING" value="0x1F6:0x0:0x0"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value=""/>
+<booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
+<stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="newtest.test"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="maventest"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+</launchConfiguration>
